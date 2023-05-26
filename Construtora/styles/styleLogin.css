@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2? family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#login {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato';
+    font-style: normal;
+    border-radius: 50px;
+
+}
+
+.loginPresentacionImagenes {
+    width: 100%;
+    padding-top: 17px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.loginPresentacionImg {
+    /* width: 46.5%; */
+    width: 171px;
+    height: 174px;
+    border-radius: 20px;
+}
+
+.loginPresentacionImg img {
+    width: 100%;
+}
+
+.explorar {
+    text-align: left;
+}
+
+.explorar h2 {
+    font-weight: 400px;
+    font-size: 25px;
+    line-height: 40px;
+    letter-spacing: 0.03em;
+    color: #252B5C;
+    padding: 18px 0 0 17px;
+
+
+}
+
+.explorar .explorarText {
+    font-weight: 700px;
+}
+
+.loginContinuar {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginContinuar button {
+    width: 74.13333333333333%;
+    height: 63px;
+    background: #8BC83F;
+    border: #1F4C6B;
+    background-image: url();
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+
+}
+
+/* 
+---------------------section 3 */
+.loginRedesOr {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.line_or {
+    width: 334px;
+    position: relative;
+    padding-top: 22px;
+}
+
+.line_or hr {
+    width: 334px;
+    border-top: 2px solid #A1A5C1;
+    margin-left: 0;
+}
+
+.line_or p {
+
+    position: absolute;
+    left: 150.585px;
+    top: 16px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #A1A5C1;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #FFFFFF;
+    border: 0px solid #8BC83F;
+}
+
+.firstname {
+    width: 265px;
+    height: 60px;
+    border-radius: 7px;
+    padding: 0;
+}
+
+/* login redesdes sociales facebook y google */
+
+.loginsocialgf {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 25px;
+}
+
+.btnloginsocial {
+    width: 158.5px;
+    height: 70px;
+    /* Grey - Soft 1 */
+
+    background: #F5F4F8;
+    border-radius: 25px;
+    border: none;
+}
+
+.btnloginsocial img {
+    width: 25px;
+    height: 25px;
+
+}
+
+/* ---------- enviarRegistrar----------------- */
+.enviarRegistrar {
+    text-align: center;
+    padding-top: 22px;
+}
+
+.enviarRegistrar a {
+    text-decoration: none;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+
+    letter-spacing: 0.03em;
+
+    /* Grey - Medium */
+
+    color: #53587A;
+}
+
+.enviarRegistrar span {
+    color: rgba(31, 76, 107, 1);
+}
+
+/* iniciar */
+#iniciar {
+    display: none;
+    width: 100%;
+
+
+}
+
+#iniciar img {
+    width: 100%;
+
+}
+
+#iniciar #formlogin {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 6.7% 0 6.7%;
+    gap: 15px;
+
+}
+
+#iniciar input {
+    height: 70px;
+    background: #F5F4F8;
+    border-radius: 10px;
+    border: #F5F4F8;
+    padding-left: 20px;
+}
+
+#iniciar input::placeholder {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    color: #A1A5C1;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    background-position-x: 90%;
+}
+
+#iniciar #email::placeholder {
+    background-image: url("/assets/Login/Email.png");
+    background-repeat: no-repeat;
+}
+
+#iniciar #password::placeholder {
+    background-image: url("/assets/Login/Vectorpassword.png");
+    background-repeat: no-repeat;
+}
+
+#iniciarSesion {
+    width: 100%;
+
+
+}
+
+#btniniciarSesion {
+    width: 278px;
+    height: 63px;
+    margin: 0 auto;
+    display: block;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    background-color: #8BC83F;
+    border-radius: 10px;
+    border: #8BC83F;
+    display: none;
+}
+
+.opcionesContrasena {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.opcionesContrasena button {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+
+    letter-spacing: 0.03em;
+
+    color: #1F4C6B;
+    border: none;
+    background-color: transparent;
+}
+
+/* formulario login */
+
+#mensaje {
+
+    display: none;
+}
+
+
+
+@media screen and (min-width: 600px) {
+    #con_login {
+        display: none;
+    }
+
+    #mensaje {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Raleway';
+        text-align: center;
+        color: black;
+        font-size: 28px;
+    }
+}

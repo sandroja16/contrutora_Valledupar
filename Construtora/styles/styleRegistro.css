@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2? family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#regresar {
+    background: #F5F4F8;
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 24px;
+}
+
+#regresar .imgregresar {
+    width: 4.6px;
+    height: 9px;
+}
+
+#registro {
+    width: 100%;
+}
+
+#registro img {
+    width: 100%;
+}
+
+#registro .crearCuenta {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 40px;
+    letter-spacing: 0.03em;
+    color: #374087;
+    margin-left: 24px;
+
+}
+
+#registro .crearCuenta strong {
+    color: #252B5C;
+    font-size: 26px;
+}
+
+#registro #formregistro {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 6.7% 0 6.7%;
+    gap: 15px;
+}
+
+#registro input {
+    height: 70px;
+    background: #F5F4F8;
+    border-radius: 10px;
+    border: #F5F4F8;
+    padding-left: 20px;
+}
+
+#registro input::placeholder {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    letter-spacing: 0.03em;
+    /* Grey - Barely Medium */
+    color: #A1A5C1;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#iniciar #username::placeholder {
+    background-image: url("/assets/Login/Vectorpeople.png");
+    background-repeat: no-repeat;
+}
+
+#iniciar #email::placeholder {
+    background-image: url("/assets/Login/Email.png");
+    background-repeat: no-repeat;
+}
+
+#iniciar #password::placeholder {
+    background-image: url("/assets/Login/Vectorpassword.png");
+    background-repeat: no-repeat;
+}
+
+.registroCuenta {
+    display: flex;
+    align-items: center;
+}
+
+.registroCuenta label {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    letter-spacing: 0.03em;
+    color: #1F4C6B;
+}
+
+.registrar {
+    width: 100%;
+}
+
+#btnRegistrar {
+    width: 278px;
+    height: 63px;
+    margin: 0 auto;
+    display: block;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    background-color: #8BC83F;
+    border-radius: 10px;
+    border: #8BC83F;
+    display: none;
+}
+
+.opcionesContrasena {
+    display: flex;
+    justify-content: space-between;
+}
+
+.opcionesContrasena button {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    letter-spacing: 0.03em;
+    color: #1F4C6B;
+    border: none;
+    background-color: transparent;
+}
+
+#mensaje {
+
+    display: none;
+}
+
+
+
+@media screen and (min-width: 600px) {
+    #registro {
+        display: none;
+    }
+
+
+    #mensaje {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Raleway';
+        text-align: center;
+        color: black;
+        font-size: 28px;
+    }
+}

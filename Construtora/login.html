@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styleLogin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>iniciar</title>
+</head>
+<script>
+    function enviarLogin() {
+        document.getElementById('presentacionInicio').style.display = "none";
+        document.getElementById('iniciar').style.display = "block";
+    }
+    function mostrarContrasena() {
+        var tipo = document.getElementById("password");
+        if (tipo.type == "password") {
+            tipo.type = "text";
+        } else {
+            tipo.type = "password";
+        }
+        event.preventDefault();
+    }
+    function verificarDatos() {
+        var correoInput = document.getElementById("email").value;
+        var contrasenaInput = document.getElementById("password").value;
+        var correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Verificar si el correo y la contraseña son válidos
+        if (correoRegex.test(correoInput) && contrasenaInput.length >= 8) {
+            document.getElementById("btniniciarSesion").style.display = "block";
+        } else {
+            document.getElementById("btniniciarSesion").style.display = "none";
+        }
+    }
+    function iniciarSesion() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        console.log(password);
+        console.log(email);
+        $.post('autenticar.php',
+            {
+                email: email,
+                password: password
+            },
+            function (data) {
+                if (data === 'exito') {
+                    window.location.href = 'inmuebles.html';
+                } else if (data === 'correo_no_existe') {
+                    alert('El correo no existe. Por favor, regístrese');
+                    enviar_registrar();
+                } else if (data === 'contrasena_incorrecta') {
+                    alert('Contraseña incorrecta');
+                    document.getElementById('password').value = "";
+                    event.defaultPrevented();
+                } else {
+                    alert('Error en el servidor');
+                }
+            });
+
+    }
+
+    function enviar_registrar() {
+        window.location.href = 'registro.html';
+    }
+</script>
+
+<body>
+    <div id="mensaje">
+        <p>Esta página solo está disponible para dispositivos móviles.</p>
+    </div>
+    <div id="con_login">
+        <div id="login">
+            <div id="presentacionInicio">
+                <div class="loginPresentacionImagenes">
+                    <div class="loginPresentacionImg"><img src="assets/Login/loginpresentacion_1.png" alt=""></div>
+                    <div class="loginPresentacionImg"><img src="assets/Login/loginpresentacion_2.png" alt=""></div>
+                    <div class="loginPresentacionImg"><img src="assets/Login/loginpresentacion_3.png" alt=""></div>
+                    <div class="loginPresentacionImg"><img src="assets/Login/loginpresentacion_4.png" alt=""></div>
+                </div>
+                <div class="explorar">
+                    <h2>¿Listo para <span class="explorarText">explorar?</span></h2>
+                </div>
+                <divc class="loginContinuar"><button class="btnloginForm" onclick="enviarLogin()">Continuar con correo
+                        electrónico</button>
+            </div>
+        </div>
+        <div id="iniciar">
+            <img src="assets/Login/undraw_city_life_gnpr 1.png" alt="">
+            <h2>Iniciemos sesión</h2>
+            <p></p>
+            <form id="formlogin">
+                <input type="email" name="email" id="email" placeholder="Correo" oninput="verificarDatos()" value="">
+                <input type="password" name="password" id="password" placeholder="Contraseña" oninput="verificarDatos()"
+                    value="">
+                <div class="opcionesContrasena">
+                    <button>¿Olvidó su contraseña?</button>
+                    <button onclick="mostrarContrasena()">Mostrar contraseña</button>
+                </div>
+
+                <div class="iniciarSesion">
+                    <button id="btniniciarSesion" onclick="iniciarSesion()">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+        <div class="loginRedesOr">
+            <div class="line_or">
+                <hr>
+                <p>Or</p>
+            </div>
+        </div>
+        <div class="loginsocialgf">
+            <button class="btnloginsocial loginGoogle"><img src="assets/Login/Layoutgogle.png" alt=""></button>
+            <button class="btnloginsocial loginFacebook"><img src="assets/Login/Layoutfacebook.png" alt=""></button>
+        </div>
+        <div class="enviarRegistrar">
+            <a href="#">
+                <p>
+                    ¿No tienes una cuenta? <strong onclick="enviar_registrar()">Registrar</strong>
+                </p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

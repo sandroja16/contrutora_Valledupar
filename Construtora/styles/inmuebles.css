@@ -1,0 +1,283 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+#mensaje {
+  display: none;
+}
+
+.btn-header {
+  background: #F5F4F8;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-header img {
+  width: 4.6px;
+  height: 9px;
+}
+
+.btn-header .img-filtro {
+  width: 18px;
+  height: 18px;
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+
+}
+
+#filtro {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#filtros {
+  width: 100%;
+  display: none;
+  font-family: 'Raleway';
+  font-style: normal;
+  position: absolute;
+  top: -100px;
+  position: relative;
+}
+
+#filters {
+  width: 66%;
+  position: absolute;
+  top: 5px;
+  right: 67px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  flex-wrap: wrap;
+}
+
+#select-filtro {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  color: #252B5C;
+
+}
+
+/* #filtro label {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.03em;
+  color: #252B5C;
+} */
+
+#filtros select {
+  width: 100%;
+  height: 42px;
+  background: #F5F4F8;
+  margin-top: 9px;
+  border-radius: 10px;
+  color: #252B5C;
+  gap: 10px;
+}
+
+#filtros select option {
+  width: 99px;
+  height: 42px;
+  background: #F5F4F8;
+
+}
+
+#btn-aplicar-filtro {
+  width: 100%;
+  height: 47px;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  background-color: #252B5C;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 9px;
+}
+
+/* barra de busqueda  */
+.barra-busqueda {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px 0 24px;
+}
+
+.barra-busqueda .entrada-busqueda {
+  height: 70px;
+  background-color: #F5F4F8;
+  border-radius: 20px;
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+  color: #252B5C;
+  border: none;
+  outline: none;
+
+}
+
+.barra-busqueda .entrada-busqueda::placeholder {
+  padding-left: 24px;
+  background: url('../assets/iconos/Search.png') no-repeat right 8px center;
+  background-size: 18px 18px;
+  background-position-x: 304px;
+
+}
+
+.barra-busqueda .entrada-busqueda:focus {
+  padding-left: 24px;
+}
+
+/*--------------*/
+.tarjeta {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 8px 16px;
+  gap: 10px;
+  width: 160px;
+  height: 231px;
+  background: #F5F4F8;
+  border-radius: 25px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.imagen-inmueble {
+  background: linear-gradient(0deg, rgba(136, 74, 246, 0.08), rgba(136, 74, 246, 0.08));
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  width: 100%;
+  height: 75%;
+}
+
+.precio {
+  position: absolute;
+  width: 75px;
+  height: 25px;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(31, 76, 107, 0.69);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 6px;
+  line-height: 10px;
+  letter-spacing: 0.03em;
+  color: #F5F4F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nombre-propiedad {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #252B5C;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.ubicacion {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 9px;
+  color: #53587A;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.direccion-icon {
+  width: 10px;
+  height: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .tarjeta {
+    width: 100%;
+    height: auto;
+  }
+
+  .tarjeta .imagen-inmueble {
+    height: 200px;
+  }
+
+  .precio {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .nombre-propiedad {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .ubicacion {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #container {
+    display: none;
+  }
+
+
+  #mensaje {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Raleway';
+    text-align: center;
+    color: black;
+    font-size: 28px;
+  }
+}

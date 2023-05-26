@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styleRegistro.css">
+    <title>Registrar</title>
+</head>
+<script>
+    function mostrarContrasena() {
+        var tipo = document.getElementById("password");
+        if (tipo.type == "password") {
+            tipo.type = "text";
+        } else {
+            tipo.type = "password";
+        }
+        event.preventDefault();
+    }
+    function verificarDatos() {
+
+        const usernameInput = document.getElementById('username');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const termsCheckbox = document.getElementById('terms');
+        const registrarBtn = document.getElementById('btnRegistrar');
+
+        // Verificar si todos los campos están completos y se ha aceptado los términos
+        if (usernameInput.value.trim() !== '' && emailInput.value.trim() !== '' && passwordInput.value.trim() !== '' && termsCheckbox.checked) {
+            document.getElementById("btnRegistrar").style.display = "block";
+        } else {
+            document.getElementById("btnRegistrar").style.display = "none";
+        }
+    }
+    function regresar() {
+        window.history.back();
+    }
+    function registrarCuenta() {
+        event.preventDefault();
+        const usernameInput = document.getElementById('username');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const formData = {
+            username: usernameInput.value.trim(),
+            email: emailInput.value.trim(),
+            password: passwordInput.value.trim()
+        };
+
+        fetch('registro.php', {
+            method: 'POST',
+            body: new URLSearchParams(formData)
+        })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'success') {
+                    window.location.href = 'login.html';
+                } else if (data === 'existing_email') {
+                    alert('Este correo ya ha sido registrado. Por favor, intente con otro correo.');
+                } else {
+                    alert('Error al registrar la cuenta. Por favor, inténtelo nuevamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Error al registrar la cuenta:', error);
+            });
+    }
+
+</script>
+
+<body>
+    <div id="mensaje">
+        <p>Esta página solo está disponible para dispositivos móviles.</p>
+    </div>
+    <div id="registro">
+        <div id="regresar" onclick="regresar()">
+            <img class="imgregresar" src="assets/registrar/Vectorregresar.png" alt="regresar">
+        </div>
+        <h2 class="crearCuenta">Crea tu <strong>cuenta</strong></h2>
+        <p></p>
+        <form id="formregistro">
+            <input type="text" name="username" id="username" placeholder="Nombre de usuario" autocomplete="off"
+                oninput="verificarDatos()" value="">
+            <input type="email" name="email" id="email" placeholder="Correo" autocomplete="off"
+                oninput="verificarDatos()" value="">
+            <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="off"
+                oninput="verificarDatos()" value="">
+            <div class="opcionesContrasena">
+                <div class="registroCuenta">
+                    <input type="checkbox" name="terms" id="terms" onchange="verificarDatos()">
+                    <label for="terms">Términos y condiciones</label>
+                </div>
+                <button onclick="mostrarContrasena()">Mostrar contraseña</button>
+            </div>
+
+            <div class="registrar">
+                <button id="btnRegistrar" onclick="registrarCuenta()">Registrar cuenta</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

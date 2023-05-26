@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inmubles</title>
+    <link rel="stylesheet" href="styles/inmuebles.css">
+</head>
+
+<body>
+    <div id="mensaje">
+        <p>Esta página solo está disponible para dispositivos móviles.</p>
+    </div>
+    <div id="container">
+        <div id="header">
+            <div id="regresar" class=" btn-header" onclick="regresar()">
+                <img class="img-agresar" src="assets/registrar/Vectorregresar.png" alt="regresar">
+            </div>
+            <h1
+                style="font-family: 'Raleway'; font-style: normal; font-weight: 700; font-size: 14px; line-height: 16px; text-align: center; color: #252B5C;">
+                Resultados</h1>
+            <div id="filtro" class="btn-header" onclick="toggleFilters()">
+                <img class="img-filtro" src="assets/iconos/Settingfilters.png" alt="regresar">
+            </div>
+        </div>
+        <div class="barra-busqueda">
+            <input type="text" class="entrada-busqueda" placeholder="Buscar ciudad">
+        </div>
+        <div id="filtros">
+            <div id="filters">
+                <div class="select-filtro">
+                    <select id="habitaciones">
+                        <option value="">Habitaciones</option>
+                        <option value="1">1 habitación</option>
+                        <option value="2">2 habitaciones</option>
+                        <option value="3">3 habitaciones</option>
+                    </select>
+                </div>
+                <div class="select-filtro">
+                    <select id="estrato">
+                        <option value="">Estrato</option>
+                        <option value="1">Estrato 1</option>
+                        <option value="2">Estrato 2</option>
+                        <option value="3">Estrato 3</option>
+                    </select>
+                </div>
+                <div class="select-filtro">
+                    <select id="banos">
+                        <option value="">Baños</option>
+                        <option value="1">1 baño</option>
+                        <option value="2">2 baños</option>
+                        <option value="3">3 baños</option>
+                    </select>
+                </div>
+                <input type="submit" id="btn-aplicar-filtro" onclik="mostrarInmuebles()" value="Aplicar Filtros">
+                <button id="btn-aplicar-filtro" onclick="enviar_registrar() ">registrar un inmuble</button>
+            </div>
+        </div>
+        <div id="contenedor-inmuebles"></div>
+    </div>
+
+    <script>
+        function regresar() {
+            window.history.back();
+        }
+        function toggleFilters() {
+            var filters = document.getElementById("filtros");
+            if (filters.style.display === "none") {
+                filters.style.display = "block";
+            } else {
+                filters.style.display = "none";
+            }
+        }
+        function enviar_registrar() {
+            window.location.href = 'registroInmueble.html';
+        }
+
+    </script>
+    <script src="js/inmuebles.js"></script>
+</body>
+
+</html>
